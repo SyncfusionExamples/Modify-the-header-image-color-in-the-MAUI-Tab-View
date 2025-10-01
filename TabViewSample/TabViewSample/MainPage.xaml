@@ -1,16 +1,21 @@
-# Modify-the-header-image-color-in-the-MAUI-Tab-View
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tabView="clr-namespace:Syncfusion.Maui.Toolkit.TabView;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local="clr-namespace:TabViewSample"
+             x:Class="TabViewSample.MainPage">
 
-This sample demonstrates how to modify the header image color in the MAUI Tab View control within a .NET MAUI application.
+    <ContentPage.BindingContext>
+        <local:TabItemsSourceViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
 
-## Sample
-
-```xaml
     <tabView:SfTabView ItemsSource="{Binding TabItems}" SelectionChanged="OnSelectionChanged">
         <tabView:SfTabView.HeaderItemTemplate>
             <DataTemplate>
                 <HorizontalStackLayout Margin="20,10,20,0">
                     <Image Source="{Binding ImageName}" Aspect="AspectFit" HorizontalOptions="Center"
-                HeightRequest="30" WidthRequest="30">
+                   HeightRequest="30" WidthRequest="30">
                         <Image.Behaviors>
                             <toolkit:IconTintColorBehavior TintColor="{Binding SelectedColor}" />
                         </Image.Behaviors>
@@ -34,15 +39,7 @@ This sample demonstrates how to modify the header image color in the MAUI Tab Vi
                 </ListView>
             </DataTemplate>
         </tabView:SfTabView.ContentItemTemplate>
+
     </tabView:SfTabView>
-```
 
-## Requirements to run the demo
-
-To run the demo, refer to [System Requirements for .NET MAUI](https://help.syncfusion.com/maui/system-requirements)
-
-## Troubleshooting:
-
-### Path too long exception
-
-If you are facing path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
+</ContentPage>
